@@ -1,0 +1,154 @@
+/*
+* Contains the stylesheets for the application
+*/
+
+/* For Header */
+.header-bg {
+	background-color: #393939;
+	height: 90px;
+	font-weight: bold;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.header-bg h3 {
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 30px;
+}
+
+/*div.ms-parent button div {
+	background: url('../images/dropdown_button.png') 0 0 no-repeat;
+	background-color: #0290BD;
+	width: 25px;
+	height: 23px;
+}
+div.ms-parent button div.open {
+	background: url('../images/dropdown_button.png') 0 -29px no-repeat ;
+	background-color: #0290BD;
+	width: 25px;
+	height: 23px;
+}*/
+/* End filter dropdowns */
+
+/*Removing border radius on all form-controls*/
+.form-control {
+	border-radius: 0px;
+}
+
+/* bootstrap override for multi select dropdown to work */
+.ms-drop input[type=checkbox] {
+	margin: -2px 0 0;
+	line-height: normal;
+}
+
+/* For jqueryui datepicker trigger icon */
+.ui-datepicker-trigger {
+	margin-top: -4px;
+	margin-left: -20px;
+}
+
+
+/* Styles for button */
+.btn-plus {
+	background: url('../images/plus_minus.png') no-repeat 0 0;
+	width: 18px;
+	height: 18px;
+	border-radius: 0px;
+	border: none;
+	margin-right: 3px;
+}
+.btn-minus {
+	background: url('../images/plus_minus.png') no-repeat 0 -23px;
+	width: 18px;
+	height: 18px;
+	border-radius: 0px;
+	border: none;
+}
+
+/* Date picker overrides */
+.datepicker {
+	border: 1px solid #ccc;
+	height: 34px;
+	padding: 6px;
+}
+td .datepicker {
+	border: 1px solid #aaa;
+	height: 26px;
+	padding: 2px;
+}
+.datepicker:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+.ui-widget-content {
+	font-family: inherit;
+	border-radius: 0px;
+	border: 1px solid #DADADA;
+	font-size: 14px;
+}
+.ui-datepicker {
+	padding: 0 0 0 0;
+}
+.ui-widget-header {
+	border: none;
+	background: #DDDDDD;
+	color: #000000;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-radius: 0px;
+}
+.ui-datepicker table {
+	background-color: #ffffff;
+	margin: 0 0 0 0;
+}
+.ui-widget-header .ui-icon {
+	background-image: url("../images/Calender_arrow.png");
+}
+.ui-icon-circle-triangle-w {
+	background-position: 0px 0px;
+	width: 17px;
+	height: 16px;
+}
+.ui-icon-circle-triangle-e {
+	background-position: 0px -22px;
+	width: 17px;
+	height: 16px;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #0189b4;
+	background: #ffffff url("../images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+	font-weight: bold;
+	color: #c77405;
+}
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #0189b4;
+	background: #66C4E4;
+	color: #363636;
+}
+/* End date picker overrides */
+
+.customBtn {
+	width: 100% !important;
+	text-align: right;
+}
+
+form#main {
+	padding-bottom: 25px;
+}
+div#formgroups {
+	padding-bottom: 15px;	
+}
+
+/* Override to left align dropdown list inside table*/
+.ms-drop ul > li {
+	text-align: left;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DynoTable Demo</title>
+	
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/multiple-select.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.multiple.select_modified.js"></script>
+	<!--<script src="js/jquery-ui-datepicker.js"></script> -->
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/app.js"></script>
+	
+	<script>
+	$(document).ready(function() {
+		//DO NOT USE		
+ 		
+	});
+	</script>
+
+</head>
+<body>
+<div class="wrapper">
+
+	<!--Header div -->
+	<div class="header-bg">
+		<h3>Dynamic Table Demo - repeating rows</h3>
+	</div>
+	<!--End Header -->
+	<br>
+
+	<div class="container">
+				
+		<form role="form" novalidate id="main" method="POST" enctype="multipart/form-data" action="save">
+
+			<div id="formgroups">
+				
+				<div class="form-group">
+				<h4>1. Repeating rows</h4>
+				<table class="table-condensed table-bordered table-hover">
+		  		<thead>
+		  			<th>Text</th>
+		  			<th>Multiselect Dropdown</th>
+		  			<th>Address</th>
+		  			<th>Date</th>
+		  			<th>Status</th>
+		  			<th></th>
+		  		</thead>
+		  		<tbody id="test123" data-minRows="1" data-maxRows="3">
+		  			<tr id="test123_templateRow" style='display:none'>
+		  				<td><input type='text' name='name_' id='name_' value='Default text' class="novalidate" required="required"></td>
+		  				<td>
+							<select class="multiselect novalidate" id="select_" name="select_">
+					  		<option value="1">1</option>
+					  		<option value="2">2</option>
+					  		<option value="3">3</option>
+					  		<option value="4">4</option>
+					  		</select>
+		  				</td>
+		  				<td><input type='radio' name='rad_' value='y' class="novalidate" required="required">Yes
+		  				<input type='radio' name='rad_' value='n' class="">No
+		  				</td>
+		  				<td><input type='text' name='d_' id='d_' value='' class="datepicker novalidate"></td>
+		  				<td><input type="checkbox" name='chk_' id='chk_'>Confirm</td>
+		  				<td><button onclick="app.btnAddClicked('test123', 5)" type="button" class="btnAdd btn btn-xs btn-plus" id="test123_btnAdd_"></button><button type="button" class="btnDel btn btn-xs btn-minus" id="test123_btnDel_"></button></td>
+					</tr>
+
+		  			<tr id="test123_row_1">
+		  				<td><input type='text' name='name_1' id='name_1' value='Text string' class="" required="required"></td>
+		  				<td>
+		  					<select class="multiselectGlobal" id='select_1' name="select_1">
+					  		<option value="1">1</option>
+					  		<option value="2" selected>2</option>
+					  		<option value="3" selected>3</option>
+					  		<option value="4">4</option>
+					  		</select>
+					  	</td>
+		  				<td><input type='radio' name='rad_1' value='y' class="" required="required" checked>Yes
+		  				<input type='radio' name='rad_1' value='n' class="">No
+		  				</td>
+		  				<td><input type='text' name='d_1' id='d_1' value='01/07/2015' class="datepickerGlobal"></td>
+		  				<td><input type="checkbox" name='chk_1' id='chk_1' checked>Confirm</td>
+		  				<td><button onclick="app.btnAddClicked('test123',5)" type="button" class="btnAdd btn btn-xs btn-plus" id="test123_btnAdd_1"></button><button type="button" class="btnDel btn btn-xs btn-minus" id="test123_btnDel_1"></button></td>
+		  			</tr>
+		  		</tbody>
+		  		</table>
+		  		</div>
+
+		  		<br><br>
+
+		  		<div class="form-group">
+				<h4>2. Repeating Section</h4>
+				<table class="table-condensed table-hover">
+		  		
+		  		<tbody id="test456" data-minRows="1" data-maxRows="3">
+		  			<tr id="test456_templateRow" style='display:none'>
+		  				<td style="width:400px;">
+		  					<div class="form-group">
+			  					<label>Dependent Name :</label>
+		  						<input type='text' name='depname_' id='depname_' value='' class="novalidate" required="required">
+		  					</div>
+		  					<br>
+		  					<div class="form-group">
+			  					<label>Dependent Type :</label>
+		  						<select class="singleselect novalidate" id="depselect_" name="depselect_">
+							  		<option value="1">Child</option>
+							  		<option value="2">Spouse</option>
+							  		<option value="3">Parent</option>
+							  		<option value="4">Other</option>
+						  		</select>
+						  	</div>
+					  		<br>
+					  		<div class="form-group">
+					  			<label>Dependent DOB :</label>
+					  			<input type='text' name='depdob_' id='depdob_' value='' class="datepicker novalidate">
+					  		</div>
+		  				</td>
+		  				<td><button onclick="app.btnAddClicked('test456', 5)" type="button" class="btnAdd btn btn-xs btn-plus" id="test456_btnAdd_"></button><button type="button" class="btnDel btn btn-xs btn-minus" id="test456_btnDel_"></button></td>
+					</tr>
+
+		  			<tr id="test456_row_1">
+		  				<td style="width:400px;">
+		  					<div class="form-group">
+			  					<label>Dependent Name :</label>
+			  					<input type='text' name='depname_1' id='depname_1' value='Name 1' class="" required="required">
+		  					</div>
+		  					<br>
+		  					<div class="form-group">
+			  					<label>Dependent Type :</label>
+			  					<select class="singleselectGlobal" id='depselect_1' name="depselect_1">
+							  		<option value="1">Child</option>
+							  		<option value="2">Spouse</option>
+							  		<option value="3" selected>Parent</option>
+							  		<option value="4">Other</option>
+						  		</select>
+					  		</div>
+					  		<br>
+					  		<div class="form-group">
+					  			<label>Dependent DOB :</label>
+					  			<input type='text' name='depdob_1' id='depdob_1' value='10/01/1970' class="datepickerGlobal">
+					  		</div>
+		  				</td>
+		  				<td><button onclick="app.btnAddClicked('test456',5)" type="button" class="btnAdd btn btn-xs btn-plus" id="test456_btnAdd_1"></button><button type="button" class="btnDel btn btn-xs btn-minus" id="test456_btnDel_1"></button></td>
+		  			</tr>
+		  		</tbody>
+		  		</table>
+		  		</div>
+
+		  		<br><br>
+
+		  		<div class="form-group">
+				<h4>3. Advanced Search (Dynamic Query Construction)</h4>
+				<table class="table-condensed table-bordered table-hover">
+		  		<!-- <thead>
+		  			<th>Criteria</th>
+		  			<th>Condition</th>
+		  			<th>Value</th>
+		  			<th></th>
+		  		</thead> -->
+		  		<tbody id="test789" data-minRows="1" data-maxRows="3">
+		  			<tr id="test789_templateRow" style='display:none'>
+		  				<td>
+							<select class="singleselect novalidate" id="criteria_" name="criteria_">
+					  		<option value="1">Name</option>
+					  		<option value="2">Age</option>
+					  		<option value="3">City</option>
+					  		</select>
+		  				</td>
+		  				<td>
+							<select class="singleselect novalidate" id="condition_" name="condition_">
+					  		<option value="1">Equals</option>
+					  		<option value="2">Not Equals</option>
+					  		<option value="3">Starts with</option>
+					  		</select>
+		  				</td>
+		  				<td><input type='text' name='criteriaValue_' id='criteriaValue_' value='' class="novalidate" required="required"></td>
+		  				
+		  				<td><button onclick="app.btnAddClicked('test789', 5)" type="button" class="btnAdd btn btn-xs btn-plus" id="test789_btnAdd_"></button><button type="button" class="btnDel btn btn-xs btn-minus" id="test789_btnDel_"></button></td>
+					</tr>
+
+		  			<tr id="test789_row_1">
+		  				<td>
+		  					<select class="singleselectGlobal" id='criteria_1' name="criteria_1">
+					  		<option value="1" selected>Name</option>
+					  		<option value="2">Age</option>
+					  		<option value="3">City</option>
+					  		</select>
+					  	</td>
+					  	<td>
+							<select class="singleselectGlobal" id="condition_1" name="condition_1">
+					  		<option value="1">Equals</option>
+					  		<option value="2">Not Equals</option>
+					  		<option value="3" selected>Starts with</option>
+					  		</select>
+		  				</td>
+		  				<td><input type='text' name='criteriaValue_1' id='criteriaValue_1' value='Uz' class="" required="required"></td>
+		  				
+		  				<td><button onclick="app.btnAddClicked('test789',5)" type="button" class="btnAdd btn btn-xs btn-plus" id="test789_btnAdd_1"></button><button type="button" class="btnDel btn btn-xs btn-minus" id="test789_btnDel_1"></button></td>
+		  			</tr>
+		  		</tbody>
+		  		</table>
+		  		</div>
+
+		  		<br>
+		  	
+				<div class="well">
+					<h3>DynoTable</h3>
+					<b>Features</b>
+					<ul>
+						<li>Contents of templateRow are inserted into newly inserted rows. It is possible to have default values added to the template row.</li>
+						<li>Automatic generation of unique "name" and "id" of each component</li>
+					</ul>
+					<b>Dependencies</b>
+					<ol>
+						<li>jQuery</li>
+						<li>jQuery UI Custom build for datepicker</li>
+						<li>Twitter Bootstrap CSS 3.x</li>
+						<li>Modified version of Multiple select jQuery plugin from http://wenzhixin.net.cn/p/multiple-select/docs/</li>
+					</ol>
+				</div>
+			</div>
+											
+		</form>
+		
+	</div>
+	
+</div>
+</body>
+</html>
