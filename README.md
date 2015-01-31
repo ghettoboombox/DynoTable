@@ -1,6 +1,8 @@
 # DynoTable
 A jQuery implementation of dynamic row insertion/deletion inside a table with multiple use cases.
 
+![Alt text](https://github.com/uzairpm/DynoTable/blob/master/Screenshot/Dyno%20Table.png "DynoTable screenshot")
+
 <b>Features</b>
 <ul>
 	<li>Contents of templateRow are inserted into newly inserted rows. It is possible to have default values added to the template row.</li>
